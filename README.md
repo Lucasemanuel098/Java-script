@@ -1,2 +1,2 @@
-# Java-script
- aulas de java script
+# java-script
+ JS
