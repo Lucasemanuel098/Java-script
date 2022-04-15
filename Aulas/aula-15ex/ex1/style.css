@@ -1,0 +1,47 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font: normal 1em arial;
+    text-transform: uppercase;
+    background-color: aquamarine;
+
+    
+}
+h1 {
+    color: rgb(41, 131, 173);
+}
+p {
+    color: rgb(41, 131, 173);
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.432);
+    align-items: center;
+    background-color: aqua;
+    width: 440px;
+    padding: 20px;
+    
+}
+div {
+    text-align: center;
+}
+.butão:hover {
+    cursor: pointer;
+}
+.butão {
+    border: 0;
+    padding: 10px;
+    color: white;
+    background-color: rgb(41, 131, 173);
+}
+#res p {
+    margin: 0px 3px 0px 3px;
+}
+#res {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+}

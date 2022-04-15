@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DETRAN</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: aqua;
+
+        }
+        p {
+            text-align: center;
+        }
+        div {
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14pt;
+            color: white;
+            background-color: rgb(0, 92, 61);
+            height: 500px;
+            width: 500px;
+            border-radius: 6px;
+        }
+        input {
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Teste estrangeiro</h1>
+        <input type="text" id="pais">
+        <input type="button" value="VERIFICAR" onclick="verificar()">
+        <div id="res"></div>
+    </div>
+
+    <script>
+        
+        function verificar() {
+            var pais = document.getElementById('pais')
+            var res = document.getElementById('res')
+            if (pais == 'brasil') {
+                res.innerHTML = `<p>Você mora em ${pais}. Brasileiro</p>`
+            } else {
+                res.innerHTML = `<p>Você mora em ${pais}. Estrangeiro</p>`
+            }
+        }
+    </script>
+</body>
+</html>

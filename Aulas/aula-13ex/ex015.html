@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dia</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: rgb(5, 32, 185);
+            text-align: center;
+        }
+        h1 {
+            font: bold 2em arial;
+            color: white;
+        }
+        input {
+            margin-top: 20px;
+            border: 0;
+            background-color: rgb(2, 59, 133);
+            color: white;
+            padding: 15px 50px 15px 50px;
+            border-radius: 10px;
+            
+        }
+        input:hover {
+            cursor: pointer;
+        }
+        .container {
+            display: flex;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.445);
+            flex-direction: column;
+            align-items: center;
+            height: 500px;
+            width: 400px;
+            background-color: rgb(39, 160, 160);
+            font: normal 16pt arial ;
+            color: white;
+            transition: 1s;
+        }
+        .butão {
+            margin-bottom: 15px;
+        } 
+        #img {
+            height: 120px;
+            width: 120px;
+            border-radius: 50%;
+            background-color: rgb(0, 255, 234)
+            
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Verificador de idade</h1>
+        <div class="container" id="container">
+            <div>
+            <p>Ano de nacimento: 
+                <input type="number" id="txtano" >
+            </p>
+            <p>Sexo: <br>
+            <input type="radio" id="mas" name="radiosex" checked> 
+            <label for="mas">Masculino</label>
+            <input type="radio" id="fem" name="radiosex">
+            <label for="fem">Feminino</label></p>
+            <input type="button" value="Verificar" onclick="verificar()" class="butão">
+            </div>
+            <div id="res">
+
+            </div>
+        </div>
+        <script>
+            
+
+            function verificar() {
+                let txtano = document.getElementById('txtano')
+                let anor = Number(txtano.value)
+                let fem = document.getElementById('fem')
+                let mas = document.getElementById('mas')
+                let res = document.getElementById('res')
+                var data = new Date()
+                var ano = data.getFullYear()
+                var nacimento = (ano - anor)
+                if (txtano.value.length == 0 || txtano.value > ano) {
+                    res.innerHTML = `Verifique os dados e tente novamente`
+                }
+               else if(nacimento <= 14) {
+                    res.innerHTML = `você naceu em ${anor}. e é uma criança de ${nacimento} anos.`
+               }  else if (nacimento <= 19) {
+                    res.innerHTML = `Você naceu em ${anor}. e é um(a) Jovem de ${nacimento} anos.`
+               } else if (nacimento <= 60) {
+                   res.innerHTML = `Você naceu em ${anor}, e é um(a) adulto de ${nacimento} anos.`
+               } else{
+                   res.innerHTML = `Você naceu em ${anor}, e é um(a) idoso(a) de ${nacimento} anos.` 
+               } 
+                
+                
+
+            }
+        </script>
+</body>
+</html>

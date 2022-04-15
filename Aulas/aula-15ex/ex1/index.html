@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Vamos contar</h1>
+        <div>
+            <p>inicio: <input type="number" id="inicio"></p>
+            <p>Fim: <input type="number" id="fim"></p>
+            <p>Passo: <input type="number" id="passo"></p>
+            <input type="button" value="Calcular" onclick="calcular()" class="butão">
+        
+        </div>
+        <div id="res"></div>
+    </div>
+
+    <script>
+        
+
+
+
+        function calcular() {
+            var iniciotxt = document.getElementById('inicio')
+            var fimtxt = document.getElementById('fim')
+            var passotxt = document.getElementById('passo')
+            var res = document.getElementById('res')
+            if (iniciotxt.value.length == 0 || fimtxt.value.length == 0 || passotxt.value.length == 0) {
+            window.alert ('[ERRO] *falta de dados*')
+            }
+            else {
+                var inicio = Number(iniciotxt.value)
+                var fim = Number(fimtxt.value)
+                var passo = Number(passotxt.value)
+
+                if (inicio < fim) {
+
+                while (inicio <= fim) {
+                res.innerHTML += `<p>${inicio}</p>`
+                inicio = inicio + passo
+
+                } 
+            } else {
+                while (inicio >= fim) {
+                res.innerHTML += `<p>${inicio}</p>`
+                inicio = inicio - passo
+            }
+            
+            
+            }
+            
+                 
+            
+        }
+        
+    </script>
+</body>
+</html>

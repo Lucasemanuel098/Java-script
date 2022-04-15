@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dia</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: rgb(2, 15, 87);
+            text-align: center;
+        }
+        input {
+            margin-top: 20px;
+            border: 0;
+            background-color: rgb(2, 59, 133);
+            color: white;
+            padding: 15px 50px 15px 50px;
+            border-radius: 10px;
+            
+        }
+        input:hover {
+            cursor: pointer;
+        }
+        .container {
+            display: flex;
+            border-radius: 10px;
+            box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.445);
+            flex-direction: column;
+            align-items: center;
+            height: 500px;
+            width: 400px;
+            background-color: rgb(39, 160, 160);
+            font: normal 16pt arial ;
+            color: white;
+            transition: 1s;
+        }
+        #img {
+            height: 120px;
+            width: 120px;
+            border-radius: 50%;
+            background-color: rgb(0, 255, 234)
+            
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container" id="container">
+        <h1>Hora do dia</h1>
+        <div id="horas"></div>
+        <div id="img"></div>
+        <input type="button" value="25%" onclick="clicar()" id="button">
+    </div>
+    <script>
+        let corpo = window.document.body
+        let agora = new Date()
+        let min = agora.getMinutes()
+        let horas = agora.getHours()
+        let agoratxt = document.getElementById('horas')
+        let container = document.getElementById('container')
+        let button = document.getElementById('button')
+        
+
+        agoratxt.innerHTML = `<p>Agora são ${horas} Horas e ${min} Minutos.`
+
+        if (horas < 12) {
+            corpo.style.backgroundColor = 'rgb(0, 195, 255)'
+            agoratxt.innerHTML += `Bom dia!</p>`
+            
+
+        } else if(horas < 19 ) {
+            corpo.style.backgroundColor = 'rgb(236, 221, 0)'
+            agoratxt.innerHTML += `Boa tarde!</p>`
+        } else {
+            corpo.style.backgroundColor = 'rgb(2, 15, 87)'
+            agoratxt.innerHTML += `Boa noite!</p>`
+        }
+
+        function clicar() {
+            container.style.borderRadius = '25%'
+            
+        }
+    </script>
+</body>
+</html>
