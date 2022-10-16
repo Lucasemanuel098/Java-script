@@ -60,3 +60,15 @@ main {
 main p {
     margin-bottom: 1.25rem;
 }
+@media (max-width: 500px) {
+    main {
+        width: 300px;
+    }
+    .container {
+        width: 300px;
+    }
+    .container input {
+        width: 70px;
+        height: 25px;
+    }
+}
