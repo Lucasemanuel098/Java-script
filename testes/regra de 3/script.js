@@ -6,7 +6,7 @@
 
     
    
-
+    
     function somar() {
     
     d.innerHTML = (Number.parseInt(c.value) * Number.parseInt(b.value)) / Number.parseInt(a.value)
